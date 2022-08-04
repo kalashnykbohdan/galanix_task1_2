@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import React, { useState } from "react";
+
+import Exercise1 from "./view/Exercise1";
+import Exercise2 from "./view/Exercise2";
+
+import { Context } from "./context";
 
 function App() {
+  const [modalActive, setModalActive] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Context.Provider value={{ modalActive, setModalActive }}>
+      <div className="App">
+        <Exercise1 />
+        <Exercise2 />
+      </div>
+    </Context.Provider>
   );
 }
 

@@ -1,0 +1,113 @@
+$width: 300px;
+$height: $width * 2/3;
+
+.flag{
+    width: $width;
+    height: $height;
+
+    margin: 10px;
+}
+
+.ukraine{
+    background-color: #fdde09;
+
+    &::before{
+        display: block;
+        content: " ";
+        width: 100%;
+        height: $height/2;
+        background-color: #1274bd;
+    }
+}
+.japan{
+    background-color: white;
+    position: relative;
+
+    &::before{
+        display: block;
+        position: absolute;
+        top: $height/2 - $height/4;
+        left: $width/2 - $height/4;
+        content: "";
+        background-color: red;
+        width: $height/2;
+        height: $height/2;
+        border-radius: 50%;
+    }
+}
+.iceland{
+    background-color: #fe0000;
+    position: relative;
+
+    & > span {
+        display: block;
+        overflow: hidden;
+        position: absolute;
+        background-color: #1274bd;
+        // border: 5px solid white;
+    }
+    &__elem_leftup{
+        width: $width / 3.75;
+        height: $width / 3.75;
+
+        border-bottom: 5px solid white;
+        border-right: 5px solid white;
+
+        top: 0px;
+        left: 0px;
+    }
+    &__elem_leftdown{
+        width: $width / 3.75;
+        height: $width / 3.75;
+
+        border-top: 5px solid white;
+        border-right: 5px solid white;
+        
+        bottom: 0px;
+        left: 0px;
+    }
+    &__elem_rightup{
+        width: $width / 1.66;
+        height: $width / 3.75;
+
+        border-bottom: 5px solid white;
+        border-left: 5px solid white;
+
+        top: 0px;
+        right: 0px;
+    }
+    &__elem_rightdown{
+
+        width: $width / 1.66;
+        height: $width / 3.75;
+
+        border-top: 5px solid white;
+        border-left: 5px solid white;
+
+        bottom: 0px;
+        right: 0px;
+    }
+}
+.czech_republic{
+    position: relative;
+    overflow: hidden;
+    background-color: #fe0000;
+    &::before{
+        display: block;
+        content: " ";
+        width: 100%;
+        height: $height/2;
+        background-color: white;
+    }
+    &::after{
+        position: absolute;
+        top: $width/10;
+        left: -($height/2 * 1.41)/2;
+        transform: rotate(45deg);
+        display: block;
+        content: " ";
+        width: $height/2 * 1.41;
+        height: $height/2 * 1.41;
+        background-color: #0000cf;
+    }
+}
